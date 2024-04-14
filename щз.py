@@ -10,7 +10,6 @@ def time_counter(func):
         return result
     return wrapper
 def counting_sort(arr, exp):
-    print('LGMSDFH"HMHHMHMF')
     n = len(arr)
     base = 10
     output = [0] * n  # Создаем массив для выходных данных такой же длины, как и входной массив
@@ -20,7 +19,6 @@ def counting_sort(arr, exp):
     for i in range(n):
         index = (arr[i] // exp) % 10  # Определяем текущий разряд числа
         count[index] += 1  # Увеличиваем счетчик для текущего разряда
-    print(count,'count')
     # Находим префиксную сумму в массиве count
     for i in range(1, 10):
         count[i] += count[i - 1]
@@ -29,10 +27,7 @@ def counting_sort(arr, exp):
     i = n - 1
     while i >= 0:
         index = (arr[i] // exp) % 10  # Определяем текущий разряд числа
-        print(index, count[index] , count, '*')
         output[count[index] - 1] = arr[i]  # Заполняем выходной массив
-        #print(count)
-        print(output)
         count[index] -= 1  # Гарантирует, что относительный порядок равных элементов останется неизменным
         i -= 1
 
@@ -56,6 +51,7 @@ if __name__ == "__main__":
     #arr = [random.randint(0, 10000) for _ in range(10000)]
     arr = [19,123,4,8325,5]
     radix_sort(arr)
-    print("After sorting:", arr[:2], arr[-3:])
+    print("After sorting:", arr)
+    #print("After sorting:", arr[:2], arr[-3:])
 
 # На небольших данных существенно медленнее чем на больших
